@@ -1,0 +1,6 @@
+create ssh key for your machine 
+https://docs.github.com/en/enterprise/2.13/user/articles/adding-a-new-ssh-key-to-your-github-account
+
+create a branch develop from your master branch
+make changes in develop
+create merge request into master
