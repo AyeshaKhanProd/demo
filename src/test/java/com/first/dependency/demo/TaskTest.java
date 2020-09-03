@@ -2,6 +2,7 @@ package com.first.dependency.demo;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.springframework.test.web.client.ExpectedCount;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,13 +15,17 @@ class TaskTest {
     }
     @Test
     void checkNullString(){
-        String name = null;
-        assertEquals(Task.mask(name),"Name can not be null or empty");
+        Exception exception = assertThrows(NullPointerException.class,() -> {
+            Integer.parseInt(Task.mask(null));
+        });
+        assertTrue(exception.getMessage().contains("Name can not be null or empty"));
     }
 
     @Test
     void checkEmptyString(){
-        String name = "";
-        assertEquals(Task.mask(name),"Name can not be null or empty");
+        Exception exception = assertThrows(NullPointerException.class,() -> {
+            Integer.parseInt(Task.mask(null));
+        });
+        assertTrue(exception.getMessage().contains("Name can not be null or empty"));
     }
 }
